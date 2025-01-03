@@ -2,10 +2,14 @@ name: 'mt'
 
 on:
   push:
-    branches: 
-      - master
+    branches:
+      - main
+      - dev
+  watch:
+    types: started
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # 每天utc时间触发
+    - cron: 00 16 * * *
 
 jobs:
   leetcode-weekly:
